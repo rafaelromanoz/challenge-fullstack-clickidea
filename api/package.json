@@ -33,6 +33,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "restify-errors": "^8.0.2",
-    "sequelize": "^6.26.0"
+    "sequelize": "^6.26.0",
+    "uuid": "^9.0.0"
   }
 }
