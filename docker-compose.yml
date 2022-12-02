@@ -1,0 +1,35 @@
+version: '3'
+services:
+#  client:
+#    image: react-fe
+#    restart: always
+#    ports:
+#      - "3000:3000"
+#    volumes:
+#      - ./client:/client
+#      - /client/node_modules
+#    links:
+#      - api
+#    networks:
+#      - webappnetwork
+#  api:
+#    image: node-be
+#    restart: always
+#    ports:
+#      - "3001:3001"
+#    volumes:
+#      - ./api:/api
+#      - /api/node_modules
+#    depends_on:
+#      - mysql
+#    networks:
+#      - webappnetwork
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
