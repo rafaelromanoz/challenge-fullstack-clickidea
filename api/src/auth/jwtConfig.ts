@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const API_SECRET: Secret = process.env.JWT_SECRET || '';
+const API_SECRET: Secret = process.env.JWT_SECRET || 'sdfsa145adf45sad65f4as5cas5';
 
 const JWT_CONFIG: SignOptions | undefined | Buffer = {
   expiresIn: '60d',
