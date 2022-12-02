@@ -1,12 +1,6 @@
 import CardRepo from "../repositories/CardRepo";
-import db from '../models';
-
 export default class CardService {
-
-  private cardRepo: CardRepo;
-  constructor() {
-    this.cardRepo = new CardRepo(db.Card);
-  }
+  constructor(private readonly cardRepo: CardRepo) {}
 
   async getAllCardsService() {
     return this.cardRepo.getAllCardsRepo();

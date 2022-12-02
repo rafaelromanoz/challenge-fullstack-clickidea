@@ -1,6 +1,6 @@
 'use strict';
 
-import { UUIDV4, Model } from 'sequelize';
+import { Model } from 'sequelize';
 
 interface CardAttributes {
   id: string;
@@ -29,7 +29,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
       type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
-      defaultValue: UUIDV4,
+      defaultValue: DataTypes.UUIDV4,
       autoIncrement: true
     },
     title: {

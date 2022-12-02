@@ -1,5 +1,5 @@
 export default class CardRepo {
-  constructor(private readonly cardModel: any) {}
+  constructor(private cardModel: any) {}
 
   public async getCardByIdRepo(id: string) {
     return this.cardModel.get(id);

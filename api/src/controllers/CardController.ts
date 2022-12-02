@@ -1,14 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import statusCodes from '../http/statusCodes';
-import CardService from '../services/cardService';
+import CardService from '../services/CardService';
 
 export default class CardController {
-  private cardService: CardService;
-  constructor() {
-    this.cardService = new CardService();
-  }
+  constructor(private readonly cardService: CardService) {}
   async getAllCardsController(req: Request, res: Response, next: NextFunction) {
     try {
+      console.log('this', this)
       const cards = await this.cardService.getAllCardsService();
       console.log(cards)
       return res.status(statusCodes.OK).json(cards);
