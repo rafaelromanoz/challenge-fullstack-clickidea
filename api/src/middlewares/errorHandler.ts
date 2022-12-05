@@ -1,9 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 
-export default (err: any, _req: Request, res: Response, _next: NextFunction) => {
+export default (
+  err: any,
+  _req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   if (err.statusCode) {
     const { statusCode, message } = err;
-    return res.status(statusCode).json({ message });
+    res.status(statusCode).json({ message });
+    return next()
   }
   return res.status(500).json({ message: 'internal error' });
-}
+};

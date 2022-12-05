@@ -4,6 +4,7 @@ import cardRoutes from './src/routes/cardRoutes';
 import 'express-async-errors';
 import loginRouter from './src/routes/loginRoutes';
 import errorHandler from './src/middlewares/errorHandler';
+import { errors } from 'celebrate';
 
 const app = express();
 
@@ -14,6 +15,8 @@ const PORT = 5000;
 
 app.use('/cards', cardRoutes);
 app.use('/login', loginRouter);
+
+app.use(errors());
 app.use(errorHandler);
 
 app.listen(PORT, () => {
