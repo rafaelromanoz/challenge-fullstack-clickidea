@@ -1,34 +1,26 @@
-version: '3'
+version: '3.8'
 services:
-#  client:
-#    image: react-fe
-#    restart: always
-#    ports:
-#      - "3000:3000"
-#    volumes:
-#      - ./client:/client
-#      - /client/node_modules
-#    links:
-#      - api
-#    networks:
-#      - webappnetwork
-#  api:
-#    image: node-be
-#    restart: always
-#    ports:
-#      - "3001:3001"
-#    volumes:
-#      - ./api:/api
-#      - /api/node_modules
-#    depends_on:
-#      - mysql
-#    networks:
-#      - webappnetwork
+  client:
+    build: ./client
+    container_name: client_frontend
+    ports:
+      - '3000:3000'
+  api:
+    build:
+      context: .
+      dockerfile: ./api
+    entrypoint: /development-entrypoint.sh
+    ports:
+      - 5000:5000
+    depends_on:
+      - mysql
+      
   mysql:
     image: mysql
-    restart: always
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=challenge_clickidea
+    restart: always
     ports:
       - "3306:3306"
     expose:

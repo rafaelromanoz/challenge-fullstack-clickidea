@@ -72,6 +72,8 @@ web_modules/
 
 # Yarn Integrity file
 .yarn-integrity
+.server
+.web-client
 
 # dotenv environment variable files
 .env
