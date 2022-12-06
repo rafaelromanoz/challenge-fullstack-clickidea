@@ -1,9 +1,12 @@
-import axios from 'axios'
+import axios from 'axios';
+
+const token = localStorage.getItem('token');
 
 const api = axios.create({
   baseURL: 'http://localhost:5000',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'authorization': token
   }
 });
 

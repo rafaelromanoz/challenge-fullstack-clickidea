@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Task from "./Task";
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable, Droppable } from "react-beautiful-dnd";
+import AddTask from "./AddTask";
 
 const Container = styled.div`
   margin: 8px;
@@ -26,16 +27,24 @@ const Column = (props) => {
       {(provided) => (
         <Container {...provided.draggableProps} ref={provided.innerRef}>
           <Title {...provided.dragHandleProps}>{props.column.title}</Title>
-          <TaskList>
-            {props.tasks.map((task, index) => (
-              <Task
-                key={task.id}
-                task={task}
-                index={index}
-                columnId={props.column.id}
-              />
-            ))}
-          </TaskList>
+          <Droppable droppableId={props.column.id} type="task">
+            {(provided) => (
+              <TaskList {...provided.droppableProps} ref={provided.innerRef}>
+                {props.tasks.map((task, index) => (
+                  <Task
+                    key={task.id}
+                    task={task}
+                    index={index}
+                    columnId={props.column.id}
+                    board={props.board}
+                    setBoard={props.setBoard}
+                  />
+                ))}
+                {provided.placeholder}
+                <AddTask board={props.board} setBoard={props.setBoard} columnId={props.column.id}></AddTask>
+              </TaskList>
+            )}
+          </Droppable>
         </Container>
       )}
     </Draggable>

@@ -17,9 +17,8 @@ const Login = () => {
   const handlerButtonLoginClick = async () => {
       try {
           const response = await api.post('/login/',{ login, senha });
-          console.log('response', response);
           localStorage.setItem('token', response.data.token);
-          navigate('/cards');
+          navigate('/board');
       } catch (error) {
         console.error(error);
         notify(error.response.data.message);
