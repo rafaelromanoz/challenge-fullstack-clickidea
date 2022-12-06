@@ -4,3 +4,8 @@ export default interface IRequestCard {
   content: string;
   id?: string
 }
+
+export interface IRequestLogin {
+  login: string;
+  senha: string;
+}

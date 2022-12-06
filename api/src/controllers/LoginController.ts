@@ -6,7 +6,7 @@ export default class LoginController {
   
   async loginController(req: Request, res: Response, next: NextFunction) {
     try {
-      const token = await this.loginService.verifyUserAndReturnToken(req.body);
+      const token = this.loginService.verifyUserAndReturnToken(req.body);
       return res.status(200).json({token});
     } catch (error) {
       return next(error);

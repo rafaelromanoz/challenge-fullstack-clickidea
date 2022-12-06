@@ -1,4 +1,4 @@
-import { StyledEntryCard } from '../style';
+import { StyledEntryCard } from './style';
 
 const EntryCard = ({ children }) => {
   return (
