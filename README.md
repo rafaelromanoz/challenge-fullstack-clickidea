@@ -88,7 +88,9 @@ Para padronização e qualidade de código foi utilizado o ESLint e o editorconf
 ### Observações
 
 
-Como descrito no readme proposto pela ClickIdeia não consegui rodar as migrations dentro do container por isso dockerizei somente o front e o banco de dados.
+Como descrito no readme proposto pela ClickIdeia não consegui fazer o projeto 100% dockerizado, não consegui rodar as migrations dentro do container por isso dockerizei somente o front e o banco de dados.
+
+Mas já estou curioso e vou conseguir rodar isso posteriormente.
 
 Tive dificuldade em algumas partes do react mas estudei e me dediquei bastante, tentei meu máximo e consegui resolver a maioria, foi um teste bem divertido!
 
