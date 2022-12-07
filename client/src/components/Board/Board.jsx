@@ -12,7 +12,16 @@ const Container = styled.div`
 `;
 
 const Board = () => {
-  const initialData = {tasks: {}, columns: {}, columnOrder:[]}
+  const initialData = {
+    tasks: [{
+      title: 'Coloque um titulo',
+      content: 'Coloque um conteúdo',
+      list: 'column1'
+    }], columns: {
+     
+    }, columnOrder: [
+    
+  ]}
   const [state, setState] = useState(initialData);
 
   const fetchData = useCallback(async () => {

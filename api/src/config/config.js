@@ -2,10 +2,10 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    username: 'root',
+    username: process.env.MYSQL_USER,
     password:  null,
-    database: 'challenge_clickidea',
-    host: 'localhost',
+    database: process.env.MYSQL_DATABASE,
+    host: process.env.MYSQL_HOST,
     dialect: 'mysql',
   },
   test: {

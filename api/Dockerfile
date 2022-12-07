@@ -1,17 +1,20 @@
 FROM node:16-alpine
 
-WORKDIR /app
+RUN npm install -g sequelize-cli 
 
-COPY . .
+RUN npm install typescript -g
+
+WORKDIR /app
 
 COPY package.json .
 
 RUN npm install
 
-RUN npm install -g typescript
+COPY . .
 
-RUN npm i -g sequelize-cli
+RUN apk update && apk add bash
+
+CMD [ "npx sequelize-cli db:migrate", "npm start" ]
 
 EXPOSE 5000
 
-CMD ["sh", "-c","--","echo 'started';while true; do sleep 1000; done"]
