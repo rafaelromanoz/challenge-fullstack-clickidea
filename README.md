@@ -30,7 +30,7 @@ Depois
 npm start
 ```
 
-### Atenção
+### Atenção!!
 
 É necessário apagar o -dev do .env para conseguir utilizar as variáveis de ambiente no projeto
 
@@ -103,4 +103,5 @@ Tive dificuldade em algumas partes do react mas estudei e me dediquei bastante e
 * [ESLint](https://eslint.org/) - Padronização e qualidade de código
 * [Sequelize](https://sequelize.org/) - Mapeamento objeto relacional
 * [Joi](https://joi.dev/api/?v=17.6.0) - Validações das informações requests.
+* [StyledComponents](https://styled-components.com/) - Componentização e estilização
 
